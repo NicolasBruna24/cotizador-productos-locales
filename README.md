@@ -1,64 +1,72 @@
-# cotizador_de_productos_locales
+#  Cotizador de Productos Locales (Full-Stack Multiplataforma)
 
-Una aplicación multiplataforma (iOS, Android y Web) diseñada para conectar a productores locales con consumidores finales, fomentando el comercio de cercanía y la economía regional.
+[![Flutter](https://shields.io)](https://flutter.dev)
+[![Supabase](https://shields.io)](https://supabase.com)
+[![PostgreSQL](https://shields.io)](https://postgresql.org)
+[![TypeScript](https://shields.io)](https://typescriptlang.org)
 
-## 🚀 ¿Qué hace el proyecto?
+Una solución arquitectónica multiplataforma de extremo a extremo (iOS, Android y Web) diseñada para mitigar la brecha digital en economías regionales, permitiendo a productores locales digitalizar su inventario y conectar con consumidores finales mediante geolocalización.
 
-Esta plataforma permite a los productores digitalizar su catálogo y gestionar sus ventas de forma integral:
+---
 
-*   **Catálogo Dinámico:** Los usuarios pueden explorar productos filtrados por cercanía geográfica y categorías.
-*   **Gestión de Productores:** Perfiles comerciales personalizables con datos de contacto (WhatsApp) y configuración de pagos (Transferencia y Mercado Pago).
-*   **Sistema de Inventario:** Carga de productos con campos dinámicos por categoría, gestión de stock y soporte para sincronización offline.
-*   **Pagos Integrados:** Soporta pagos en línea a través de Mercado Pago y gestión de pedidos mediante transferencias bancarias con envío de comprobantes.
-*   **Herramientas de Marketing:** Generación de códigos QR para catálogos, integración con anuncios (AdMob), compartir productos y sistema de favoritos.
-*   **Seguridad:** Autenticación robusta con Supabase, validación de RUT (Chile) y eliminación segura de cuentas mediante Edge Functions.
+##  Arquitectura y Flujo del Sistema
 
-## 🛠️ Tecnologías utilizadas
+El proyecto implementa una arquitectura desacoplada utilizando un modelo **BaaS (Backend as a Service)** impulsado por Supabase para garantizar alta disponibilidad, sincronización en tiempo real y seguridad a nivel de datos.
 
-### Frontend
-*   **Flutter & Dart:** Desarrollo multiplataforma.
-*   **Geolocator & Geocoding:** Para la detección automática de la región del usuario.
-*   **Cached Network Image:** Optimización de carga de imágenes.
-*   **Tutorial Coach Mark:** Guía interactiva para nuevos usuarios.
-*   **App Links:** Soporte para Deep Linking (retorno de pagos y navegación).
+##  Características Técnicas Destacadas
 
-### Backend (BaaS)
-*   **Supabase:**
-    *   **PostgreSQL:** Base de datos relacional con RLS (Row Level Security).
-    *   **Auth:** Gestión de sesiones y recuperación de contraseñas.
-    *   **Storage:** Almacenamiento optimizado de imágenes de productos.
-    *   **Edge Functions (TypeScript):** Lógica de servidor para procesos sensibles como la eliminación de cuentas.
+* **Geolocalización Inversa y Cercanía:** Implementación de consultas geoespaciales eficientes para determinar el radio de entrega y filtrar el catálogo dinámicamente según la ubicación en tiempo real del usuario.
+* **Seguridad a Nivel de Fila (RLS) en PostgreSQL:** Configuración estricta de políticas de bases de datos para garantizar el cumplimiento de la privacidad, aislando por completo las operaciones CRUD de cada productor.
+* **Procesamiento Serverless (Edge Functions):** Lógica de backend desacoplada en TypeScript ejecutada en el borde para procesos sensibles del sistema, optimizando el rendimiento global y la seguridad del ciclo de vida del usuario.
+* **Pasarela de Pago e Integración de Webhooks:** Flujo de pago síncrono/asíncrono integrado con Mercado Pago y soporte para Deep Linking (`App Links`) para el retorno seguro del estado transaccional.
+* **Validación de Identidad Local:** Lógica de negocio personalizada para la sanitización y validación algorítmica de RUT (Documento de identidad chileno).
 
-### Integraciones
-*   **Mercado Pago:** Pasarela de pagos.
-*   **Google Mobile Ads:** Monetización mediante banners.
+---
 
-## ⚙️ Instalación y Ejecución
+##  Stack Tecnológico
+
+### Ecosistema Frontend
+* **Core:** Flutter (Dart) para rendimiento nativo compilado.
+* **Geolocalización:** `geolocator` & `geocoding` para el cálculo de coordenadas.
+* **Performance:** `cached_network_image` para persistencia en caché de assets remotos y optimización de ancho de banda.
+* **Navegación:** Soporte de enlaces universales para redirección de pasarelas de pago externas.
+
+### Infraestructura Backend & DevOps
+* **Motor de Base de Datos:** PostgreSQL en la nube de Supabase.
+* **Serverless Compute:** Deno / Edge Functions (TypeScript).
+* **Almacenamiento de Objetos:** Supabase Storage con políticas de acceso controlado.
+* **Monetización:** Integración asíncrona de Google Mobile Ads.
+
+---
+
+##  Configuración del Entorno de Desarrollo
 
 ### Prerrequisitos
-*   Flutter SDK (última versión estable).
-*   Un proyecto configurado en [Supabase](https://supabase.com/).
+* Flutter SDK (Versión estable más reciente).
+* Cuenta activa y proyecto inicializado en Supabase.
+* CLI de Supabase (Opcional, recomendado para testing de Edge Functions).
 
-### Pasos para ejecutar
+### Instrucciones de Despliegue Local
 
-1.  **Clonar el repositorio:**
-    ```bash
-    git clone <tu-url-del-repositorio>
-    cd cotizador-productos-locales
-    ```
+1. **Clonación del Repositorio:**
+   ```bash
+   git clone https://github.com
+   cd cotizador-productos-locales
+   ```
 
-2.  **Instalar dependencias:**
-    ```bash
-    flutter pub get
-    ```
+2. **Aprovisionamiento de Dependencias:**
+   ```bash
+   flutter pub get
+   ```
 
-3.  **Configurar Supabase:**
-    Asegúrate de inicializar Supabase en tu `main.dart` con tu `url` y `anonKey`.
+3. **Inyección de Variables de Entorno:**
+   Inicializa las variables de configuración de Supabase (`url` y `anonKey`) en tu punto de entrada de la aplicación (`lib/main.dart` o mediante archivo `.env` configurado).
 
-4.  **Ejecutar la aplicación:**
-    ```bash
-    # Para Android/iOS
-    flutter run
-    # Para Web
-    flutter run -d chrome
-    ```
+4. **Ejecución de la Aplicación:**
+   ```bash
+   # Despliegue en Entorno Móvil (Android/iOS)
+   flutter run
+
+   # Despliegue en Entorno Web (Modo Debugger)
+   flutter run -d chrome
+   ```
