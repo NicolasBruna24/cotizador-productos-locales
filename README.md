@@ -1,11 +1,12 @@
-#  Cotizador de Productos Locales (Full-Stack Multiplataforma)
+# 🛒 Cotizador de Productos Locales (Full-Stack Multiplataforma)
 
 [![Flutter](https://shields.io)](https://flutter.dev)
 [![Supabase](https://shields.io)](https://supabase.com)
-[![PostgreSQL](https://shields.io)](https://postgresql.org)
-[![TypeScript](https://shields.io)](https://typescriptlang.org)
+[![PostgreSQL](https://shields.io)](https://www.postgresql.org)
+[![TypeScript](https://shields.io)](https://www.typescriptlang.org)
 
 Una solución arquitectónica multiplataforma de extremo a extremo (iOS, Android y Web) diseñada para mitigar la brecha digital en economías regionales, permitiendo a productores locales digitalizar su inventario y conectar con consumidores finales mediante geolocalización.
+.
 
 ---
 
