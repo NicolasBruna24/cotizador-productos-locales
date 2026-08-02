@@ -6,15 +6,14 @@
 [![TypeScript](https://shields.io)](https://www.typescriptlang.org)
 
 Una solución arquitectónica multiplataforma de extremo a extremo (iOS, Android y Web) diseñada para mitigar la brecha digital en economías regionales, permitiendo a productores locales digitalizar su inventario y conectar con consumidores finales mediante geolocalización.
-.
 
 ---
 
-##  Arquitectura y Flujo del Sistema
+## 🏗️ Arquitectura y Flujo del Sistema
 
 El proyecto implementa una arquitectura desacoplada utilizando un modelo **BaaS (Backend as a Service)** impulsado por Supabase para garantizar alta disponibilidad, sincronización en tiempo real y seguridad a nivel de datos.
 
-##  Características Técnicas Destacadas
+## ⚡ Características Técnicas Destacadas
 
 * **Geolocalización Inversa y Cercanía:** Implementación de consultas geoespaciales eficientes para determinar el radio de entrega y filtrar el catálogo dinámicamente según la ubicación en tiempo real del usuario.
 * **Seguridad a Nivel de Fila (RLS) en PostgreSQL:** Configuración estricta de políticas de bases de datos para garantizar el cumplimiento de la privacidad, aislando por completo las operaciones CRUD de cada productor.
@@ -24,7 +23,7 @@ El proyecto implementa una arquitectura desacoplada utilizando un modelo **BaaS 
 
 ---
 
-##  Stack Tecnológico
+## 🛠️ Stack Tecnológico
 
 ### Ecosistema Frontend
 * **Core:** Flutter (Dart) para rendimiento nativo compilado.
@@ -40,7 +39,7 @@ El proyecto implementa una arquitectura desacoplada utilizando un modelo **BaaS 
 
 ---
 
-##  Configuración del Entorno de Desarrollo
+## ⚙️ Configuración del Entorno de Desarrollo
 
 ### Prerrequisitos
 * Flutter SDK (Versión estable más reciente).
@@ -51,8 +50,7 @@ El proyecto implementa una arquitectura desacoplada utilizando un modelo **BaaS 
 
 1. **Clonación del Repositorio:**
    ```bash
-  
- git clonegit@github.com:NicolasBruna24/cotizador-productos-locales.git
+   git clone git@github.com:NicolasBruna24/cotizador-productos-locales.git
    cd cotizador-productos-locales
    ```
 
