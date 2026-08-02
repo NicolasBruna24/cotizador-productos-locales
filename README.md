@@ -51,7 +51,8 @@ El proyecto implementa una arquitectura desacoplada utilizando un modelo **BaaS 
 
 1. **Clonación del Repositorio:**
    ```bash
-   git clone https://github.com
+  
+ git clonegit@github.com:NicolasBruna24/cotizador-productos-locales.git
    cd cotizador-productos-locales
    ```
 
