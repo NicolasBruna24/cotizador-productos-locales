@@ -83,3 +83,12 @@ El proyecto implementa una arquitectura desacoplada utilizando un modelo **BaaS 
    # Despliegue en Entorno Web (Modo Debugger)
    flutter run -d chrome
    ```
+
+---
+
+## 📬 Contacto
+
+¿Te interesó el proyecto o quieres conversar sobre alguna colaboración? 
+
+- **LinkedIn:** [Nicolás Bruna Fuentealba](https://www.linkedin.com/in/nicolás-bruna-fuentealba-6086b8410?utm_source=share_via&utm_content=profile&utm_medium=member_android)
+- **Email:** brunafuentealba@gmail.com
