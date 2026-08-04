@@ -16,6 +16,7 @@
 
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+
 Una solución arquitectónica multiplataforma de extremo a extremo (iOS, Android y Web) diseñada para mitigar la brecha digital en economías regionales, permitiendo a productores locales digitalizar su inventario y conectar con consumidores finales mediante geolocalización.
 
 ---
