@@ -1,4 +1,19 @@
-# 🛒 Cotizador de Productos Locales (Full-Stack Multiplataforma)
+# 🛒 Cotizador de Productos Locales
+
+App full-stack multiplataforma (iOS, Android, Web) que conecta a productores y 
+pequeños comerciantes locales con clientes cercanos.
+
+**El problema:** muchos productores pequeños no tienen forma digital de mostrar 
+su inventario ni de que los encuentren clientes cerca de ellos — todo sigue 
+siendo boca a boca o redes sociales sin estructura.
+
+**La solución:** los productores suben su catálogo, los clientes lo encuentran 
+por geolocalización según cercanía, y pueden pagar directo desde la app con 
+Mercado Pago.
+
+Construido con Flutter en el frontend y Supabase (PostgreSQL + Edge Functions) 
+en el backend.
+
 
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
 
@@ -15,9 +30,7 @@
 
 
 
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-
-Una solución arquitectónica multiplataforma de extremo a extremo (iOS, Android y Web) diseñada para mitigar la brecha digital en economías regionales, permitiendo a productores locales digitalizar su inventario y conectar con consumidores finales mediante geolocalización.
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) 
 
 ---
 
